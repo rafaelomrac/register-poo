@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="images/favicon.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Orientado a Objetos</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <main class='main'>
+        <section id='content'>
+            <h1>Calculadora de IMC</h1>
+            <form action='' method='post' id='form'>
+
+                <div id='message'></div>
+
+                <div class='form-group'>
+                    <label for="person-id">ID</label>
+                    <input 
+                        type="number"
+                        name="person-id"
+                        id="person-id"
+                        placeholder="ID"
+                        disabled
+                    />
+                </div>
+
+                <div class='form-group'>
+                    <label for="name">Nome <span class='details'>*</span> </label>
+                    <input 
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="Nome"
+                        autofocus
+                        required
+                    />
+                </div>
+
+                <div class='form-group'>
+                    <label for="age">Idade <span class='details'>*</span> </label>
+                    <input
+                        type="number"
+                        name="age"
+                        id="age"
+                        min='1' max='120' step='1'
+                        placeholder="Idade"
+                        required
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label for="weight">Peso <span class='details'>*</span></label>
+                    <input
+                        type="number"
+                        name="weight"
+                        id="weight"
+                        min='1.0' max='600.0' step='0.1'
+                        placeholder="Peso"
+                        required
+                    />
+                    <!-- 1kg a 597 kg -->
+                </div>
+                    
+                <div class="form-group">
+                    <label for="height">Altura <span class='details'>*</span></label>
+                        <input
+                            type="number"
+                            name="height"
+                            id="height"
+                            min='0.30' max='3.00' step='0.01'
+                            placeholder="Altura"
+                            required
+                        />
+                    <!-- 0.47 metros a 3 metros -->
+                </div>
+
+                <div class="form-group">
+                    <button
+                        type="submit"
+                        id='btn-calc' class='btn'
+                        name='btn-calc'>
+                        Calcular
+                    </button>
+                </div>
+
+            </form>
+
+            <!-- JANELA MODAL -->
+            <div class="modal" id="modal">
+                <div class="modal-content">
+                    <header class="modal-header">
+                        <h2 id="title"></h2>
+                        <span class="close-modal" id="close-modal">&#10006;</span>
+                    </header>
+                    <div id="mensagemModal">
+                    </div>
+                    <footer class="modal-footer" id="btn-modal">
+                        <button id="confirm" class="btn btn-edit">Sim</button>
+                        <button id="cancel" class="btn btn-del">Não</button>
+                    </footer>
+                </div>
+            </div>
+            <!-- FIM JANELA MODAL -->
+            
+            <!-- editar e apagar -->
+            <div class='form-edit-delete'>
+                <h2>Digite o id para Apagar ou Editar o registro</h2>
+                <form method='POST' id='form-edit-delete'>
+                    <div class='colunas2'>
+
+                        <div class="form-group">
+                            <button
+                                type="submit"
+                                id='btn-del' class='btn btn-del'
+                                name='btn-del'>
+                                Apagar
+                            </button>
+                        </div>
+
+                        <div class='form-group'>
+                            <input
+                                type="number"
+                                name="id"
+                                id="id"
+                                min='0' max='999' step='1'
+                                placeholder="ID"
+                            />
+                        </div>
+    
+                        <div class="form-group">
+                            <button
+                                type="submit"
+                                id='btn-edit' class='btn btn-edit'
+                                name='btn-edit'>
+                                Editar
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <!-- view -->
+            <div id='data'>
+                <!-- tabela -->
+            </div>
+        </section>
+    </main>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
